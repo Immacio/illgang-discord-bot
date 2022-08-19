@@ -4,14 +4,12 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("bait")
     .setDescription("Call someone out for baiting")
-    .addStringOption((option) => {
-      const userOption = option
+    .addStringOption((option) =>
+      option
         .setName("user")
         .setDescription("Mentioned the user who baited with @user")
-        .setRequired(true);
-
-      return userOption;
-    }),
+        .setRequired(true)
+    ),
   async execute(interaction) {
     const embed = new EmbedBuilder()
       .setTitle(`BAIT ALERT`)
