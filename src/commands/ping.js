@@ -5,6 +5,13 @@ module.exports = {
     .setName("ping")
     .setDescription("Replies with Pong!"),
   async execute(interaction) {
-    await interaction.reply("Pong!");
+    const message = await interaction.deferReply({
+      fetchReply: true,
+    });
+    const newMessage = `Pong! Latency is ${
+      message.createdTimestamp - interaction.createdTimestamp
+    }ms.`;
+
+    await interaction.editReply({ content: newMessage, ephmeral: true });
   },
 };

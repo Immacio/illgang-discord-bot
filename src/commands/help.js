@@ -5,6 +5,6 @@ module.exports = {
     .setName("help")
     .setDescription("Displays list of commands available by ILLBOT"),
   async execute(interaction) {
-    await interaction.reply("Sup");
+    await interaction.reply("Current supported commands: /help, /ping");
   },
 };
