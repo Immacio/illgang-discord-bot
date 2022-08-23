@@ -38,6 +38,6 @@ module.exports = {
       fetchReply: true,
     });
 
-    message.react("🙋");
+    message.react("🙋").then(() => message.react("🙅‍♂️"));
   },
 };
