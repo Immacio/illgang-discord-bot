@@ -6,7 +6,7 @@ module.exports = {
     .setDescription("Displays list of commands available by ILLBOT"),
   async execute(interaction) {
     await interaction.reply(
-      "Current supported commands: /help, /ping, /bait @user, /avatar"
+      "Current supported commands: /help, /ping, /bait @user, /avatar, /lfg size"
     );
   },
 };

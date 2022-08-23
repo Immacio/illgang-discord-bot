@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const { boldString } = require("../utility/styleFunctions");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -12,12 +13,12 @@ module.exports = {
     ),
   async execute(interaction) {
     const embed = new EmbedBuilder()
-      .setTitle(`BAIT ALERT`)
+      .setTitle(`🚨 BAIT ALERT 🚨`)
       .setDescription(
         `${interaction.user} has called you out for baiting.\n Stop baiting now or face the tribunal.`
       )
       .setAuthor({
-        name: "🚨 ILLGANG Bait Police 🚨",
+        name: "👮 ILLGANG Bait Police 👮",
       })
       .setColor(0xff0000)
       .setImage(
@@ -27,7 +28,7 @@ module.exports = {
     const baitingUser = interaction.options.getString("user");
 
     const message = await interaction.reply({
-      content: `${baitingUser} has been baiting!`,
+      content: `${baitingUser} has been ${boldString("baiting!")}`,
       embeds: [embed],
       fetchReply: true,
     });
