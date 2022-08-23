@@ -1,2 +1,2 @@
 Worker: node ./src/index.js
-Worker: node ./src/deploy-commands.js
+Worker1: node ./src/deploy-commands.js
