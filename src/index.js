@@ -46,6 +46,14 @@ client.on("interactionCreate", async (interaction) => {
 
   if (!command) return;
 
+  client.user.setPresence({
+    activities: {
+      name: "/help",
+      type: "PLAYING",
+    },
+    status: "online",
+  });
+
   try {
     await command.execute(interaction);
   } catch (error) {
